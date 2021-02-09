@@ -28,8 +28,8 @@ class _HomePageState extends State<HomePage> {
       body: FlutterMap(
         options: MapOptions(
           onLongPress: addPin,
-          center: LatLng(51.5074, 0.1278),
-          zoom: 16.0,
+          center: LatLng(47.4990, 19.0437), // Széchenyi Chain Bridge Coordinates
+          zoom: 12.0, // Changed zoom level from 16 to 12, to better see the whole overlay area from further distance
           minZoom: 10,
           plugins: [
             UserLocationPlugin(),
@@ -38,7 +38,9 @@ class _HomePageState extends State<HomePage> {
         layers: [
           new TileLayerOptions(
             urlTemplate:
-                "https://api.mapbox.com/styles/v1/{user}/{style}/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}",
+                "https://api.mapbox.com/styles/v1/{user}/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", // TODO: Paste your style here
+
+            // TODO: add access token here OR if you keep it in one line in `urlTemplate`, then delete `additionalOptions`.
             additionalOptions: {
               'accessToken': 'Your accessToken',
             },
