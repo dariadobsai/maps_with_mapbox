@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
   Widget _openPopupMenu() => PopupMenuButton<int>(
         onSelected: (value) {
           setState(() {
-            value == 1 ? isPresentTime = true : isPresentTime = false;
+            value == 1 ? isPresentTime = true : isPresentTime = false; // shorter form: isPresent = value == 1;
           });
         },
         itemBuilder: (context) => [
